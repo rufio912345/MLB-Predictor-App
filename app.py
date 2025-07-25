@@ -1,16 +1,16 @@
 import streamlit as st
 import pandas as pd
-import subprocess
+from predict_today import todays_predictions
 
 st.title("⚾ MLB Predictor App")
 
-# Run the prediction script explicitly and capture errors clearly
-result = subprocess.run(["python", "predict_today.py"], capture_output=True, text=True)
-
-if result.returncode == 0:
+# Generate today's predictions explicitly within Streamlit
+try:
+    # Save predictions explicitly
+    todays_predictions.to_csv('todays_predictions.csv', index=False)
     st.success("Predictions generated successfully!")
-else:
-    st.error(f"⚠️ Error running prediction script: {result.stderr}")
+except Exception as e:
+    st.error(f"⚠️ Error generating predictions: {e}")
 
 # Load today's predictions clearly into Streamlit
 try:
