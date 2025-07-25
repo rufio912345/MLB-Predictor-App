@@ -1,8 +1,11 @@
 import streamlit as st
 import pandas as pd
 from predict_today import (
-    moneyline_picks, runline_picks, total_picks,
-    player_prop_picks, correct_score_picks
+    moneyline_picks, 
+    runline_picks, 
+    total_picks,
+    player_prop_picks, 
+    correct_score_picks
 )
 
 st.title("⚾ MLB Predictor App - Daily Top Picks")

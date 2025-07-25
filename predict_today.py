@@ -71,3 +71,13 @@ with pd.ExcelWriter("todays_predictions.xlsx") as writer:
     total_picks.to_excel(writer, sheet_name="Total Picks", index=False)
     player_prop_picks.to_excel(writer, sheet_name="Player Prop Picks", index=False)
     correct_score_picks.to_excel(writer, sheet_name="Correct Score Picks", index=False)
+
+# Add this explicitly at the very end of predict_today.py
+__all__ = [
+    "moneyline_picks",
+    "runline_picks",
+    "total_picks",
+    "player_prop_picks",
+    "correct_score_picks"
+]
+
